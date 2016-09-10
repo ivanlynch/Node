@@ -1,0 +1,18 @@
+doctype html
+html(lang="es")
+	head
+		title Lynch
+		meta(charset="utf-8")
+		link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css", rel="stylesheet")
+		link(href="/public/css/app.css" rel="stylesheet")
+		script(src="/public/socket.io/socket.io.js")
+	body
+		nav(class="large-padding black white-text")
+			ul
+				li 
+					a(href="/app") Inicio
+				li 
+					a(href="/app/imagenes/new") Subir Imagen
+				li 
+					a(href="/app/imagenes") Mis Imagenes
+		block contenido
