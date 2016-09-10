@@ -1,11 +1,12 @@
 var express = require("express");
 var Imagen = require("./models/imagenes");
 var router = express.Router();
-var image_finder_middleware = require("./middlewares/find_image");
 var fs = require("fs");
 var redis = require("redis");
 
-var client = redis.createClient("images");
+var client = redis.createClient();
+
+var image_finder_middleware = require("./middlewares/find_image");
 
 router.get("/", function(solicitud, respuesta) {
 	Imagen.find({})

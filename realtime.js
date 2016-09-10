@@ -1,5 +1,5 @@
 module.exports = function(server, sessionMiddleware){
-	var io = require("socket.io")(server);
+	var io = require('socket.io').listen(server);
 	var redis = require("redis");
 	var client = redis.createClient();
 
@@ -10,6 +10,7 @@ module.exports = function(server, sessionMiddleware){
 	});
 
 	client.on("message", function(channel, message){
+		console.log("Recibimos un mensaje del canal: "+channel);
 		console.log(message);
 	});
 

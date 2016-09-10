@@ -21,7 +21,7 @@ var sessionMiddleware = session({
 
 realtime(server, sessionMiddleware);
 
-app.use("/public",express.static('public'));
+app.use("/public",express.static("public"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
